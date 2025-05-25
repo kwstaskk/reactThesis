@@ -2,10 +2,10 @@ import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, subjectsData } from "@/lib/data";
+import { role, thesisData } from "@/lib/data";
 import Image from "next/image";
 
-type Subject = {
+type Thesis = {
   id: number;
   name: string;
   teachers: string[];
@@ -13,7 +13,7 @@ type Subject = {
 
 const columns = [
   {
-    header: "Subject Name",
+    header: "Thesis topics",
     accessor: "name",
   },
   {
@@ -27,8 +27,8 @@ const columns = [
   },
 ];
 
-const SubjectListPage = () => {
-  const renderRow = (item: Subject) => (
+const ThesisListPage = () => {
+  const renderRow = (item: Thesis) => (
     <tr
       key={item.id}
       className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
@@ -39,8 +39,8 @@ const SubjectListPage = () => {
         <div className="flex items-center gap-2">
           {role === "admin" && (
             <>
-              <FormModal table="subject" type="update" data={item} />
-              <FormModal table="subject" type="delete" id={item.id} />
+              <FormModal table="thesis" type="update" data={item} />
+              <FormModal table="thesis" type="delete" id={item.id} />
             </>
           )}
         </div>
@@ -52,7 +52,7 @@ const SubjectListPage = () => {
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* TOP */}
       <div className="flex items-center justify-between">
-        <h1 className="hidden md:block text-lg font-semibold">All Subjects</h1>
+        <h1 className="hidden md:block text-lg font-semibold">All Thesis topics</h1>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
@@ -67,11 +67,11 @@ const SubjectListPage = () => {
         </div>
       </div>
       {/* LIST */}
-      <Table columns={columns} renderRow={renderRow} data={subjectsData} />
+      <Table columns={columns} renderRow={renderRow} data={thesisData} />
       {/* PAGINATION */}
       <Pagination />
     </div>
   );
 };
 
-export default SubjectListPage;
+export default ThesisListPage;

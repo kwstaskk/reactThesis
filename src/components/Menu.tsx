@@ -32,8 +32,8 @@ const menuItems = [
       },
       {
         icon: "/subject.png",
-        label: "Subjects",
-        href: "/list/subjects",
+        label: "Thesis topics",
+        href: "/list/thesis",
         visible: ["admin"],
       },
       {

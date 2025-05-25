@@ -331,7 +331,7 @@ export const parentsData = [
   },
 ];
 
-export const subjectsData = [
+export const thesisData = [
   {
     id: 1,
     name: "Math",
@@ -593,7 +593,7 @@ export const examsData = [
   },
 ];
 
-export const assignmentsData = [
+export const applicationsData = [
   {
     id: 1,
     subject: "Math",
