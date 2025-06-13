@@ -42,7 +42,7 @@ const FormModal = ({
     | "attendance"
     | "event"
     | "announcement";
-  type: "create" | "update" | "delete";
+  type: "create" | "update" | "delete" | "assign";
   data?: any;
   id?: number;
 }) => {
@@ -68,7 +68,16 @@ const FormModal = ({
       </form>
     ) : type === "create" || type === "update" ? (
       forms[table](type, data)
-    ) : (
+    ) : type === "assign" && id ? (
+      <form action="" className="p-4 flex flex-col gap-4">
+        <span className="text-center font-medium">
+          Are you sure you want this topic? {table}?
+        </span>
+        <button className="bg-green-700 text-white py-2 px-4 rounded-md border-none w-max self-center">
+          Assign
+        </button>
+      </form>)
+       : (
       "Form not found!"
     );
   };

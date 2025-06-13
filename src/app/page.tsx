@@ -1,7 +1,10 @@
-const Homepage = () => {
+import LoginSignup from "@/components/loginSignup/loginSignup"
+const LoginPage = () => {
   return (
-    <div className=''>Homepage</div>
+    <div className=''>
+      <LoginSignup></LoginSignup>
+    </div>
   )
 }
 
-export default Homepage
+export default LoginPage

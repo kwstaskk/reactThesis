@@ -41,9 +41,19 @@ const ThesisListPage = () => {
             <>
               <FormModal table="thesis" type="update" data={item} />
               <FormModal table="thesis" type="delete" id={item.id} />
+              <FormModal table="thesis" type="assign" id={item.id} />
             </>
           )}
         </div>
+         <div className="flex items-center gap-2">
+          {role === "student" && (
+            <>
+              
+              <FormModal table="thesis" type="assign" id={item.id} />
+            </>
+          )}
+        </div>
+
       </td>
     </tr>
   );
